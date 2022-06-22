@@ -1,6 +1,5 @@
 # TF-IAC-PROVISION
 
-These files will spin up a device ready to be deployed with Ansible
+This iaac code will spin up a vm, along with terraform plan ; terraform output should provide a public ipv4 to pass to ansible
 
-## How to
-Dynamic files not supported. These are in .gitignore with sensitive data.
+## linked repositories
