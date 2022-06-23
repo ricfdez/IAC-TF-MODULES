@@ -41,3 +41,13 @@ resource "aws_key_pair" "my-app-1" {
     key_name = "my-app-1"
     public_key = "${file(var.public_key_path)}"
 }
+
+resource "local_file" "ansible_inventory" {
+  content = <<-DOC
+    #VAR to automate adding the IP of the spinned up mainappbox
+    [webservers]
+    ${aws_instance.mainappbox.public_ip}
+    DOC
+  filename = "./hosts"
+
+}
